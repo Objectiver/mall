@@ -13,7 +13,7 @@ import java.util.Objects;
 import static com.imooc.mall.enums.ResponseEnum.ERROR;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @ControllerAdvice  //捕获运行异常，不然抛异常后前端只会获得页面报错，希望报错之后能够是包含具体错误信息的json数据
 public class RuntimeExceptionHandler {

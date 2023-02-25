@@ -5,7 +5,7 @@ import com.imooc.mall.vo.OrderVo;
 import com.imooc.mall.vo.ResponseVo;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 public interface IOrderService {
 

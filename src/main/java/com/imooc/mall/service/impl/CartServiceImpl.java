@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @Service   //在购物车里面，数据如果存成list格式，需要更改某产品的数量，那么需要遍历商品list,根据productId查找到商品，然后更改
 	//如果是Map的话，可以Map.get(productId) 不需要遍历，高性能购物车；Redis中具有这样的map结构，java中叫Hash结构

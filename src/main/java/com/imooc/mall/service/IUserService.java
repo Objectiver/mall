@@ -4,7 +4,7 @@ import com.imooc.mall.pojo.User;
 import com.imooc.mall.vo.ResponseVo;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 public interface IUserService {
 

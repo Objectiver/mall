@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @Data
 public class ProductDetailVo {

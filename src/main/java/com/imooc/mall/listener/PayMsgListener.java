@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  *
  *
- * Created by zhaozhao
+ * Created by ZhangZhao
  */
 @Component
 @RabbitListener(queues = "payNotify")

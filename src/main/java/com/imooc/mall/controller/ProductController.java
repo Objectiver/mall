@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @RestController
 public class ProductController {

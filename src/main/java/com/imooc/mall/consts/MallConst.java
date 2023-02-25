@@ -1,7 +1,7 @@
 package com.imooc.mall.consts;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 public class MallConst {
 	public static final String CURRENT_USER = "currentUser";//避免硬编码"currentUser"

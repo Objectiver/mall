@@ -23,7 +23,7 @@ import static com.imooc.mall.enums.ProductStatusEnum.*;
 import static com.imooc.mall.enums.ResponseEnum.PRODUCT_OFF_SALE_OR_DELETE;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @Service
 @Slf4j

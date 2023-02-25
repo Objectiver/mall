@@ -2,11 +2,7 @@ package com.imooc.mall.enums;
 
 import lombok.Getter;
 
-/**
- * @author zhangzhao
- * @Date 2023/2/4
- * @description
- */
+
 @Getter
 public enum RoleEnum {
     ADMIN(0),

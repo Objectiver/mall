@@ -5,7 +5,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @Data
 public class ProductVo {

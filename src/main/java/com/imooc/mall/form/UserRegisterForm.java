@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @Data
 public class UserRegisterForm {

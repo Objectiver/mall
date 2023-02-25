@@ -7,7 +7,7 @@ import com.imooc.mall.vo.ResponseVo;
 import java.util.Map;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 public interface IShippingService {
 

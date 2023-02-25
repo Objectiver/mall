@@ -16,7 +16,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @Slf4j
 public class ICartServiceTest extends MallApplicationTests {

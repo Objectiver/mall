@@ -1,7 +1,7 @@
 package com.imooc.mall.exception;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 public class UserLoginException extends RuntimeException {
 }

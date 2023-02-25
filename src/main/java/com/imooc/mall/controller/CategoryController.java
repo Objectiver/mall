@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @RestController
 public class CategoryController {

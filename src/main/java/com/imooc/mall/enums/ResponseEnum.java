@@ -3,7 +3,7 @@ package com.imooc.mall.enums;
 import lombok.Getter;
 
 /**
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @Getter
 public enum ResponseEnum {

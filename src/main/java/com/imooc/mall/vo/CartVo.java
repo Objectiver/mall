@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 购物车
- * Created by 廖师兄
+ * Created by ZhangZhao
  */
 @Data
 public class CartVo {
