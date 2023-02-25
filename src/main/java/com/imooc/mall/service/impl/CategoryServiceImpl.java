@@ -17,9 +17,7 @@ import java.util.stream.Collectors;
 
 import static com.imooc.mall.consts.MallConst.ROOT_PARENT_ID;
 
-/**
- * Created by ZhangZhao
- */
+
 @Service
 public class CategoryServiceImpl implements ICategoryService {
 
