@@ -11,7 +11,16 @@ import java.util.Objects;
  * Created by ZhangZhao
  */
 @Data
-@JsonInclude(value = JsonInclude.Include.NON_NULL)
+@JsonInclude(value = JsonInclude.Include.NON_NULL)//@JsonInclude注解的作用是指定实体类在序列化时的策略
+/*
+ALWAYS：表示总是序列化所有属性
+NON_NULL：表示序列化非null属性
+NON_ABSENT：表示序列化非null或者引用类型缺省值，例如java8的Optional类，这个选中通常与Optional一起使用
+NON_EMPTY：表示序列化非Empty的属性，例如空的集合不会被序列化
+NON_DEFAULT：仅包含与POJO属性默认值不同的值
+CUSTOM：由{@link JsonInclude＃valueFilter}指定值本身，或由{@link JsonInclude＃contentFilter}指定结构化类型的内容，由过滤器对象的equals方法进行序列化，返回true则会被排除，返回false会被序列化
+USE_DEFAULTS：使用默认值
+ */
 public class ResponseVo<T> {
 
 	private Integer status;

@@ -56,7 +56,7 @@ public class OrderServiceImpl implements IOrderService {
 			return ResponseVo.error(ResponseEnum.SHIPPING_NOT_EXIST);
 		}
 
-		//获取购物车，校验（是否有商品、库存）
+		//获取购物车，校验（是否有商品、库存）   查询出来成为列表，遍历
 		List<Cart> cartList = cartService.listForCart(uid).stream()
 				.filter(Cart::getProductSelected)
 				.collect(Collectors.toList());
@@ -65,13 +65,13 @@ public class OrderServiceImpl implements IOrderService {
 			return ResponseVo.error(ResponseEnum.CART_SELECTED_IS_EMPTY);
 		}
 
-		//获取cartList里的productIds（这是优化方法使用mysql里的in，之前是for循环遍历product列表）
+		//获取cartList里的productIds（这是优化方法使用mysql里的in，之前是for循环遍历product列表）list转换为set
 		Set<Integer> productIdSet = cartList.stream()
 				.map(Cart::getProductId)
 				.collect(Collectors.toSet());
 		//selectByProductIdSet   select () from mall_product where id in (,productIdSet..)     resultMap
 		List<Product> productList = productMapper.selectByProductIdSet(productIdSet);
-		//Map  key = productId,value = product  之前方法是用的for循环遍历productList取出product
+		//产品列表 list  转换为 Map  key = productId,value = product  之前方法是用的for循环遍历productList取出product
 		Map<Integer, Product> map  = productList.stream()
 				.collect(Collectors.toMap(Product::getId, product -> product));
 
@@ -90,7 +90,6 @@ public class OrderServiceImpl implements IOrderService {
 				return ResponseVo.error(ResponseEnum.PRODUCT_OFF_SALE_OR_DELETE,
 						"商品不是在售状态. " + product.getName());
 			}
-
 			//库存是否充足
 			if (product.getStock() < cart.getQuantity()) {
 				return ResponseVo.error(ResponseEnum.PROODUCT_STOCK_ERROR,
@@ -99,7 +98,6 @@ public class OrderServiceImpl implements IOrderService {
 			//构建订单项
 			OrderItem orderItem = buildOrderItem(uid, orderNo, cart.getQuantity(), product);
 			orderItemList.add(orderItem);
-
 			//减库存
 			product.setStock(product.getStock() - cart.getQuantity());
 			int row = productMapper.updateByPrimaryKeySelective(product);
@@ -122,6 +120,7 @@ public class OrderServiceImpl implements IOrderService {
 		if (rowForOrderItem <= 0) {
 			return ResponseVo.error(ResponseEnum.ERROR);
 		}
+
 
 		//更新购物车（选中的商品）
 		//Redis有事务(打包命令)，不能回滚

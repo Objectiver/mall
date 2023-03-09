@@ -50,4 +50,5 @@ public class OrderController {
 		User user = (User) session.getAttribute(MallConst.CURRENT_USER);
 		return orderService.cancel(user.getId(), orderNo);
 	}
+
 }
