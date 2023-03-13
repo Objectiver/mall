@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/mall?characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+  redis:  #未设密码
+    host: 127.0.0.1  #在虚拟机的redis就填虚拟机ip
+    port: 6379
+  rabbitmq:
+    addresses: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+mybatis:
+  configuration:
+    #解决数据库下滑线在java对象中变量名驼峰无法对应问题
+    #否则打印的查询结果中就会有null值
+    #Category{id=100001, parentId=null, name='家用电器', status=1, sortOrder=null, createTime=null, updateTime=null}
+    map-underscore-to-camel-case: true
+    #控制台日志配置（可以打印sql语句）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mappers/*.xml #无此mapper无法映射BindingException: Invalid bound statement (not found)
+#server:
+#  servlet:
+#    session:
+#      timeout: 120 #单位s，两分钟
